@@ -3,7 +3,6 @@ import {
   inject,
 } from '@angular/core'
 import {
-  select,
   Store,
 } from '@ngrx/store'
 import {
@@ -15,6 +14,7 @@ import {
 import { stopWatchValueSelector } from '../../store/stopwatch/selectors'
 import { Observable } from 'rxjs'
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -23,7 +23,7 @@ import { Observable } from 'rxjs'
 export class MainComponent {
   private storeObservable = inject(Store)
 
-  stopwatchValue: Observable<number> = this.storeObservable.pipe(select(stopWatchValueSelector))
+  stopwatchValue: Observable<number> = this.storeObservable.select(stopWatchValueSelector)
 
   runWatch() {
     this.storeObservable.dispatch(init())

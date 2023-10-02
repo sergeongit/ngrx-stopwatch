@@ -8,12 +8,15 @@ import { WatchInterface } from '../../interfaces/watch.interface'
 
 export const stopwatchFeatureKey = 'stopwatch'
 
-const initialState: WatchInterface = {
+export const initialState: WatchInterface = {
   value: 0,
-  isRunning: false
+  isRunning: false,
 }
 
 export const watchReducer = createReducer(
   initialState,
   on(fromWatchActions.init, (state) => ({ ...state })),
+  on(fromWatchActions.run, (state) => ({ ...state, value: state.value + 1 })),
+  on(fromWatchActions.pause, (state) => ({ ...state, value: state.value })),
+  on(fromWatchActions.reset, (state) => ({ ...state, value: 0 })),
 )
