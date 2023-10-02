@@ -1,6 +1,23 @@
-<div>
-  <p>{{stopwatchValue | async}}</p>
-  <button mat-button (click)="runWatch()">Run</button>
-  <button mat-button (click)="pauseWatch()">Pause</button>
-  <button mat-button (click)="resetWatch()">Stop</button>
-</div>
+<section class="container p-2 pb-4">
+  <div class="text-center">
+    <p class="fs-custom-header text-info">{{stopwatchValue | async}}</p>
+
+    <div class="d-flex gap-4">
+      <button mat-button
+              color="primary"
+              class="p-1 fs-4 p-2 border border-dark"
+              (click)="runWatch()">Run
+      </button>
+      <button mat-button
+              color="accent"
+              class="p-1 fs-4 p-2 border border-dark"
+              (click)="pauseWatch()">Pause
+      </button>
+      <button mat-button
+              color="warn"
+              class="p-1 fs-4 p-2 border border-dark"
+              (click)="resetWatch()">Stop
+      </button>
+    </div>
+  </div>
+</section>
