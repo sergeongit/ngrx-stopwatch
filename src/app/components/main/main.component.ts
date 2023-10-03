@@ -11,19 +11,23 @@ import {
   reset,
   run,
 } from '../../store/stopwatch/actions'
-import { stopWatchValueSelector } from '../../store/stopwatch/selectors'
+import {
+  stopWatchStatusSelector,
+  stopWatchValueSelector,
+} from '../../store/stopwatch/selectors'
 import { Observable } from 'rxjs'
 
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
   private storeObservable = inject(Store)
 
   stopwatchValue: Observable<number> = this.storeObservable.select(stopWatchValueSelector)
+  stopwatchIsRunStatus: Observable<boolean> = this.storeObservable.select(stopWatchStatusSelector)
 
   runWatch() {
     this.storeObservable.dispatch(init())

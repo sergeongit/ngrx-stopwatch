@@ -9,6 +9,7 @@
     <div class="d-flex justify-content-center gap-4">
       <button mat-button
               color="primary"
+              disabled="{{stopwatchIsRunStatus | async}}"
               class="p-1 fs-4 p-2 border border-dark"
               (click)="runWatch()">Run
       </button>

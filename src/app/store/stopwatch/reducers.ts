@@ -16,7 +16,7 @@ export const initialState: WatchInterface = {
 export const watchReducer = createReducer(
   initialState,
   on(fromWatchActions.init, (state) => ({ ...state })),
-  on(fromWatchActions.run, (state) => ({ ...state, value: state.value + 1 })),
-  on(fromWatchActions.pause, (state) => ({ ...state, value: state.value })),
-  on(fromWatchActions.reset, (state) => ({ ...state, value: 0 })),
+  on(fromWatchActions.run, (state) => ({ ...state, value: state.value + 1, isRunning: true })),
+  on(fromWatchActions.pause, (state) => ({ ...state, value: state.value, isRunning: false })),
+  on(fromWatchActions.reset, (state) => ({ ...state, value: 0, isRunning: false })),
 )
