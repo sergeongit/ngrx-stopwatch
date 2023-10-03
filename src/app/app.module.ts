@@ -16,12 +16,14 @@ import {
 } from './store'
 import { EffectsModule } from '@ngrx/effects'
 import { WatchEffects } from './store/stopwatch/effects'
+import { TimeFormatPipe } from './pipes/time-format.pipe'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
+    TimeFormatPipe,
   ],
   imports: [
     BrowserModule,

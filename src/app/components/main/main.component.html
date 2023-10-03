@@ -1,8 +1,12 @@
 <section class="container p-2 pb-4">
   <div class="text-center">
-    <p class="fs-custom-header text-info">{{stopwatchValue | async}}</p>
+    <p class="fs-custom-header text-info"
+       matTooltip="hours: minutes: seconds"
+       matTooltipPosition="above"
+    >{{stopwatchValue | async | timeFormat}}
+    </p>
 
-    <div class="d-flex gap-4">
+    <div class="d-flex justify-content-center gap-4">
       <button mat-button
               color="primary"
               class="p-1 fs-4 p-2 border border-dark"
