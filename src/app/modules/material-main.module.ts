@@ -14,6 +14,6 @@ import { MatTooltipModule } from '@angular/material/tooltip'
     MatCardModule,
     MatButtonModule,
     MatTooltipModule,
-  ]
+  ],
 })
 export class MaterialMainModule {}

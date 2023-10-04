@@ -10,10 +10,10 @@ export const stopWatchFeatureSelector = createFeatureSelector<WatchInterface>(st
 
 export const stopWatchValueSelector = createSelector(
   stopWatchFeatureSelector,
-  (state: WatchInterface): number => state.value
+  (state: WatchInterface): number => state.value,
 )
 
 export const stopWatchStatusSelector = createSelector(
   stopWatchFeatureSelector,
-  (state:WatchInterface) => state.isRunning
+  (state: WatchInterface): boolean => state.isRunning,
 )
